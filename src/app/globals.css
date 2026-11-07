@@ -1,0 +1,7 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+html{scroll-behavior:smooth}body{overflow-x:hidden}
+:focus-visible{outline:3px solid #F26A1B;outline-offset:2px}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-in>*{animation:rise .6s both}.hero-in>*:nth-child(2){animation-delay:.12s}.hero-in>*:nth-child(3){animation-delay:.24s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+@keyframes pop{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}.wa-pop{animation:pop .2s ease-out}

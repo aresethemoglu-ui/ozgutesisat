@@ -1,0 +1,11 @@
+node_modules
+.next
+.env*.local
+.DS_Store
+node_modules.nosync
+
+# Local Netlify folder
+.netlify
+node_modules 2
+tsconfig.tsbuildinfo
+*.tmp

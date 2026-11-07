@@ -1,0 +1,27 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  STORAGE = "netlify"   # canlıda Netlify Blobs kullan
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Güvenlik başlıkları
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+# www → çıplak alan adı
+[[redirects]]
+  from = "https://www.ozgutesisat.com/*"
+  to = "https://ozgutesisat.com/:splat"
+  status = 301
+  force = true
